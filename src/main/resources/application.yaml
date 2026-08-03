@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: product-order
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/product_order_db
+    username: root
+    password: Root@123
+    driver-class_name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+    show-sql: true
+
+    properties:
+      hibernate:
+        format-sql: true
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+jwt:
+  secret-key: N2Y2YzQ5N2JhNDU5ZTU3MWMxN2I0NjYwODQ4YjQ4ZjEzN2Y4ZjE5NjVkMWU2YzUxY2Y4OTY4YzY3NjU4YQ==
+  expiration: 86400000
+  refresh-expiration: 604800000
+
+file:
+  upload-dir: uploads
+
+logging:
+  level:
+    org.springframework.security: INFO
