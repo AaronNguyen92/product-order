@@ -48,17 +48,29 @@ public class SecurityConfig {
                 .formLogin(AbstractHttpConfigurer::disable)
                 .httpBasic(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
+
+                        // ===== Public =====
                         .requestMatchers("/api/auth/**")
                         .permitAll()
 
                         .requestMatchers("/uploads/**")
                         .permitAll()
 
-                        .requestMatchers("/api/users/me", "/api/users/me/**")
-                        .authenticated()
+                        .requestMatchers(
+                                "/swagger-ui/**",
+                                "/v3/api-docs/**"
+                        )
+                        .permitAll()
 
                         .requestMatchers("/api/public/products/**")
                         .permitAll()
+
+                        // ===== Authenticated =====
+
+                        .requestMatchers("/api/users/me", "/api/users/me/**")
+                        .authenticated()
+
+                        // ===== Admin =====
 
                         .requestMatchers(
                                 "/api/users/**",
