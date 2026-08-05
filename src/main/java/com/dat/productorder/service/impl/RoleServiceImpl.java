@@ -50,7 +50,7 @@ public class RoleServiceImpl implements RoleService {
         Role oldRole = roleRepository.findById(id).orElseThrow(
                 () -> new ResourceNotFoundException("Role not found") );
 
-        if (!oldRole.getName().equals(request.getName())
+        if ( ( oldRole.getName() != request.getName() )
                 && roleRepository.existsByName(request.getName())) {
 
             throw new DuplicateResourceException("Role name already exists");
@@ -96,7 +96,7 @@ public class RoleServiceImpl implements RoleService {
         RoleResponse response = new RoleResponse();
 
         response.setId(role.getId());
-        response.setName(role.getName());
+        response.setName(role.getName().name());
         response.setDescription(role.getDescription());
 
         return response;

@@ -8,6 +8,7 @@ import com.dat.productorder.dto.response.user.MyProfileResponse;
 import com.dat.productorder.entity.RefreshToken;
 import com.dat.productorder.entity.Role;
 import com.dat.productorder.entity.User;
+import com.dat.productorder.enums.RoleName;
 import com.dat.productorder.enums.UserStatus;
 import com.dat.productorder.exception.DuplicateResourceException;
 import com.dat.productorder.exception.ResourceNotFoundException;
@@ -69,7 +70,7 @@ public class AuthServiceImpl implements AuthService {
         user.setPassword(passwordEncoder.encode(request.getPassword()));
 
         //find role
-        Role userRole = roleRepository.findByName("ROLE_USER")
+        Role userRole = roleRepository.findByName(RoleName.ROLE_USER)
                 .orElseThrow(() -> new ResourceNotFoundException("Role not found"));
 
         //set default

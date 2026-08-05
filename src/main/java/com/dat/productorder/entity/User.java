@@ -69,6 +69,7 @@ public class User {
     @JoinColumn(name = "role_id", nullable = false)
     private Role role;
 
+    @Builder.Default
     @Column(nullable = false)
     private boolean deleted = false;
 }

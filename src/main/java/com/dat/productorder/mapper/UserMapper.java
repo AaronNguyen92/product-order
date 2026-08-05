@@ -42,7 +42,7 @@ public class UserMapper {
 
         RoleSummaryResponse roleResponse = new RoleSummaryResponse();
         roleResponse.setId(user.getRole().getId());
-        roleResponse.setName(user.getRole().getName());
+        roleResponse.setName(user.getRole().getName().name());
 
         response.setRole(roleResponse);
 
@@ -65,7 +65,7 @@ public class UserMapper {
 
         RoleSummaryResponse roleResponse = new RoleSummaryResponse();
         roleResponse.setId(user.getRole().getId());
-        roleResponse.setName(user.getRole().getName());
+        roleResponse.setName(user.getRole().getName().name());
 
         response.setRole(roleResponse);
 

@@ -1,6 +1,7 @@
 package com.dat.productorder.dto.request.role;
 
-import jakarta.validation.constraints.NotBlank;
+import com.dat.productorder.enums.RoleName;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,9 +14,9 @@ import lombok.Setter;
 @AllArgsConstructor
 public class RoleRequest {
 
-    @NotBlank(message = "Role name is required")
+    @NotNull(message = "Role name is required")
     @Size(max = 50, message = "Role name must not exceed 50 characters")
-    private String name;
+    private RoleName name;
 
     @Size(max = 500, message = "Description must not exceed 500 characters")
     private String description;
