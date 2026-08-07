@@ -215,7 +215,7 @@ Before running the project, make sure the following software is installed:
 ### Clone Repository
 
 ```bash
-git clone https://github.com/<your-github-username>/product-order.git
+git clone https://github.com/AaronNguyen92/product-order.git
 
 cd product-order
 ```
@@ -234,12 +234,24 @@ spring:
 
 ### Run with Maven
 
+Windows:
+```PowerShell
+.\mvnw.cmd spring-boot:run
+```
+
+Linux/macOS:
 ```bash
 mvn spring-boot:run
 ```
 
 Or build the application first:
 
+Windows:
+```PowerShell
+.\mvnw.cmd clean package
+```
+
+Linux/macOS:
 ```bash
 mvn clean package
 
