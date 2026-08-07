@@ -327,3 +327,7 @@ Java Backend Developer
 
 GitHub: https://github.com/AaronNguyen92
 
+Email: npdat101092@gmail.com
+
+LinkedIn: https://www.linkedin.com/in/phat-dat-nguyen-0910a3257
+
