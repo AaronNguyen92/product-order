@@ -232,7 +232,7 @@ spring:
     password: your_password
 ```
 
-### Run with Maven
+### Run with Maven Wrapper
 
 Windows:
 ```PowerShell
@@ -241,7 +241,7 @@ Windows:
 
 Linux/macOS:
 ```bash
-mvn spring-boot:run
+./mvnw spring-boot:run
 ```
 
 Or build the application first:
@@ -249,11 +249,13 @@ Or build the application first:
 Windows:
 ```PowerShell
 .\mvnw.cmd clean package
+
+java -jar target/product-order-0.0.1-SNAPSHOT.jar
 ```
 
 Linux/macOS:
 ```bash
-mvn clean package
+./mvnw clean package
 
 java -jar target/product-order-0.0.1-SNAPSHOT.jar
 ```
@@ -305,8 +307,14 @@ The project includes unit tests for the service layer using:
 
 Run all tests:
 
+Windows:
+```PowerShell
+.\mvnw.cmd test
+```
+
+Linux/macOS:
 ```bash
-mvn test
+./mvnw test
 ```
 
 ## Future Improvements
